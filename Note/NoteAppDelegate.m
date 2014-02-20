@@ -10,6 +10,47 @@
 
 @implementation NoteAppDelegate
 
+-(NSPersistentStoreCoordinator *)persistentCoordinator
+{
+    if (nil != _persistentCoordinator) {
+        return _persistentCoordinator;
+    }
+    //得到数据库路径
+    NSString *docs = [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) lastObject];
+    //CoreData是建立在SQLite之上的，所以数据库名称需要与Xcdatamodel文件同名
+    NSURL *storeURL = [NSURL fileURLWithPath:[docs stringByAppendingString:@"Model.sqlite"]];
+    NSError *error = nil;
+    _persistentCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self manageModel]];
+    
+    if (![_persistentCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+        NSLog(@"error: %@, %@",error, [error userInfo]);
+    }
+    return self.persistentCoordinator;
+}
+
+-(NSManagedObjectModel *)manageModel
+{
+    if (nil != _manageModel) {
+        return _manageModel;
+    }
+    _manageModel = [NSManagedObjectModel mergedModelFromBundles:nil];
+    return _manageModel;
+}
+
+-(NSManagedObjectContext *)manageContext
+{
+    if (nil != _manageContext) {
+        return _manageContext;
+    }
+    
+    NSPersistentStoreCoordinator *coordinator = [self persistentCoordinator];
+    if (nil != coordinator) {
+        _manageContext = [[NSManagedObjectContext alloc] init];
+        [_manageContext setPersistentStoreCoordinator:coordinator];
+    }
+    return _manageContext;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
@@ -41,6 +82,13 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    NSError *error;
+    if (nil != self.manageContext) {
+        if ([self.manageContext hasChanges] && ![self.manageContext save:&error]) {
+            NSLog(@"error:%@,%@",error,[error userInfo]);
+            abort();
+        }
+    }
 }
 
 @end

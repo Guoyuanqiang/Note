@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NoteViewController : UIViewController
-
+@interface NoteViewController : UITableViewController<UITableViewDelegate,UITableViewDataSource>{
+    NSArray *data;
+}
+@property (retain,nonatomic) NSArray *data;
 @end
