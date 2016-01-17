@@ -30,24 +30,8 @@
     return self;
 }
 
-
--(void)viewWillAppear:(BOOL)animated{
-    NSLog(@"willappear");
-
-    //self.contentDatasource = array;
-    [self fetchRequestResult];
-    [self.tableView reloadData];//update the datasouce when tableviewcell show
-    
-}
-
--(void)viewDidDisappear:(BOOL)animated{
-    
-}
-
 - (void)viewDidLoad
 {
-
-    NSLog(@"viewload");
     [super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -55,6 +39,14 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    //self.contentDatasource = array;
+    [self fetchRequestResult];
+    [self.tableView reloadData];//update the datasouce when tableviewcell show
+    
 }
 
 - (void)didReceiveMemoryWarning

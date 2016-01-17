@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D13D80A1897B6480018ED34 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0D13D8081897B6480018ED34 /* Model.xcdatamodeld */; };
 		0D13D8131897D4E40018ED34 /* Content.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D13D8121897D4E40018ED34 /* Content.m */; };
-		0D13D8C218A01EDE0018ED34 /* 122-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D13D8C118A01EDE0018ED34 /* 122-2.png */; };
 		0D13D8C518A0EADB0018ED34 /* NoteAddContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D13D8C418A0EADB0018ED34 /* NoteAddContentViewController.m */; };
-		0D13D91718A490130018ED34 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D13D91618A490130018ED34 /* icon.png */; };
 		0DCC885D18903E3600E1B8A2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCC885C18903E3600E1B8A2 /* Foundation.framework */; };
 		0DCC885F18903E3700E1B8A2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCC885E18903E3700E1B8A2 /* CoreGraphics.framework */; };
 		0DCC886118903E3700E1B8A2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCC886018903E3700E1B8A2 /* UIKit.framework */; };
@@ -45,10 +43,8 @@
 		0D13D8091897B6480018ED34 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		0D13D8111897D4E40018ED34 /* Content.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Content.h; sourceTree = "<group>"; };
 		0D13D8121897D4E40018ED34 /* Content.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Content.m; sourceTree = "<group>"; };
-		0D13D8C118A01EDE0018ED34 /* 122-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "122-2.png"; path = "../../../icon/122-2.png"; sourceTree = "<group>"; };
 		0D13D8C318A0EADB0018ED34 /* NoteAddContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteAddContentViewController.h; sourceTree = "<group>"; };
 		0D13D8C418A0EADB0018ED34 /* NoteAddContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteAddContentViewController.m; sourceTree = "<group>"; };
-		0D13D91618A490130018ED34 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../../icon/padsiosicon2/icon.png; sourceTree = "<group>"; };
 		0DCC885918903E3600E1B8A2 /* Note.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Note.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DCC885C18903E3600E1B8A2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0DCC885E18903E3700E1B8A2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -144,7 +140,6 @@
 			children = (
 				0D13D8071897B6300018ED34 /* coredata */,
 				0DCC886B18903E3700E1B8A2 /* NoteAppDelegate.h */,
-				0D13D8C118A01EDE0018ED34 /* 122-2.png */,
 				0DCC886C18903E3700E1B8A2 /* NoteAppDelegate.m */,
 				0DCC886E18903E3700E1B8A2 /* Main_iPhone.storyboard */,
 				0D13D8C318A0EADB0018ED34 /* NoteAddContentViewController.h */,
@@ -165,7 +160,6 @@
 		0DCC886318903E3700E1B8A2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0D13D91618A490130018ED34 /* icon.png */,
 				0DCC886418903E3700E1B8A2 /* Note-Info.plist */,
 				0DCC886518903E3700E1B8A2 /* InfoPlist.strings */,
 				0DCC886818903E3700E1B8A2 /* main.m */,
@@ -271,8 +265,6 @@
 			files = (
 				0DCC889518903ECC00E1B8A2 /* disclosureButton.png in Resources */,
 				0DCC887818903E3700E1B8A2 /* Images.xcassets in Resources */,
-				0D13D91718A490130018ED34 /* icon.png in Resources */,
-				0D13D8C218A01EDE0018ED34 /* 122-2.png in Resources */,
 				0DCC887018903E3700E1B8A2 /* Main_iPhone.storyboard in Resources */,
 				0DCC886718903E3700E1B8A2 /* InfoPlist.strings in Resources */,
 			);
@@ -429,11 +421,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Note/Note-Prefix.pch";
 				INFOPLIST_FILE = "Note/Note-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "CB5B7E74-90E9-4AE3-9BC1-05E4597C56E5";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -443,11 +436,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Note/Note-Prefix.pch";
 				INFOPLIST_FILE = "Note/Note-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "CB5B7E74-90E9-4AE3-9BC1-05E4597C56E5";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
