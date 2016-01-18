@@ -57,6 +57,7 @@
     NSLog(@"------Test");
     NSLog(@"------Test1");
     NSLog(@"------Test2");
+    NSLog(@"------Test3");
     return YES;
 }
 							
