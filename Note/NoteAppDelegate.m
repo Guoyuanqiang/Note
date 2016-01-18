@@ -60,6 +60,7 @@
     NSLog(@"------Test3");
     NSLog(@"------Test4");
     NSLog(@"------Test5");
+    NSLog(@"------Test6");
     return YES;
 }
 							
